@@ -234,9 +234,20 @@ img {
 .brand-subtitle {
     font-size: 0.82rem; /* Slightly larger for better readability */
     color: #ffffff; /* Converted to white color as requested */
-    font-weight: 600;
+    font-weight: 700;
+    margin-top: 4px;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+}
+
+.brand-subtitle-en {
+    font-size: 0.52rem;
+    color: rgba(255, 255, 255, 0.8); /* Cream white with high-end opacity */
+    font-weight: 700;
     margin-top: 2px;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.2;
 }
 
 /* Nav Menu */
