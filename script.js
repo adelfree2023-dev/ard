@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const galleryGrid = document.getElementById("main-gallery-grid");
     const btnLoadMore = document.getElementById("btn-load-more");
-    const filterTabs = document.querySelectorAll(".tab-btn");
+
     
     let activeCategory = "all";
     let loadedCount = 0;
@@ -149,16 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Tab Filtering triggers
-    filterTabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-            filterTabs.forEach(t => t.classList.remove("active"));
-            tab.classList.add("active");
-            
-            activeCategory = tab.getAttribute("data-category");
-            renderGallery(false);
-        });
-    });
+
 
     // Load More click handler
     btnLoadMore.addEventListener("click", () => {
