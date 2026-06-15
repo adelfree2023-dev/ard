@@ -1420,33 +1420,38 @@ img {
     }
 
     .site-header {
-        padding: 10px 0;
+        position: absolute;
+        padding: 15px 0;
+    }
+
+    .site-header.sticky {
+        position: absolute;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        box-shadow: none;
+        border-bottom: none;
+    }
+
+    .header-container {
+        justify-content: center;
     }
 
     .header-actions {
-        gap: 10px;
-    }
-
-    .cta-header-btn {
-        padding: 8px 14px;
-        font-size: 0.8rem;
+        display: none;
     }
 
     .logo-img-file {
-        height: 48px; /* scaled down logo on mobile */
+        height: 70px; /* Make it large and clear in the center */
     }
 
     .brand-subtitle {
-        font-size: 0.68rem; /* scaled down subtitle on mobile */
+        font-size: 0.76rem;
     }
 
     .brand-subtitle-en {
-        font-size: 0.44rem;
-        letter-spacing: 0.5px;
-    }
-
-    .mobile-nav-toggle {
-        display: flex;
+        font-size: 0.48rem;
+        letter-spacing: 0.8px;
     }
 
     .nav-menu {
