@@ -48,6 +48,7 @@ html {
     scroll-behavior: smooth;
     font-size: 16px;
     -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
 }
 
 body {
@@ -1491,6 +1492,10 @@ img {
 
     .experience-badge .exp-years {
         font-size: 1.6rem;
+    }
+
+    .main-img-wrapper::after {
+        transform: translate(-5px, 5px); /* reduced offset to prevent horizontal overflow */
     }
 
     .about-features {
