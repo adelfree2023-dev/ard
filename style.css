@@ -1487,7 +1487,27 @@ img {
     }
 
     .highlights-container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding: 16px;
+        scrollbar-width: none; /* Hide scrollbar for Firefox */
+        -webkit-overflow-scrolling: touch; /* Momentum scrolling on iOS */
+    }
+
+    .highlights-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome/Safari */
+    }
+
+    .highlights-container .highlight-card {
+        flex: 0 0 280px; /* Fixed width so they stay side-by-side */
+        scroll-snap-align: start;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-glass);
+        border-radius: var(--radius-sm);
+        padding: 16px;
     }
 
     .experience-badge {
