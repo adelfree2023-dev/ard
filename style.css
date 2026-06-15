@@ -283,6 +283,12 @@ img {
     width: 100%;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
 .cta-header-btn {
     background: rgba(212, 175, 55, 0.1);
     color: var(--gold-primary);
@@ -1413,7 +1419,29 @@ img {
     }
 
     .site-header {
-        padding: 16px 0;
+        padding: 10px 0;
+    }
+
+    .header-actions {
+        gap: 10px;
+    }
+
+    .cta-header-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .logo-img-file {
+        height: 48px; /* scaled down logo on mobile */
+    }
+
+    .brand-subtitle {
+        font-size: 0.68rem; /* scaled down subtitle on mobile */
+    }
+
+    .brand-subtitle-en {
+        font-size: 0.44rem;
+        letter-spacing: 0.5px;
     }
 
     .mobile-nav-toggle {
