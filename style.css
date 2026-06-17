@@ -1793,15 +1793,31 @@ body.light-theme {
     --bg-tertiary: #f1f3f5;
     --bg-glass: rgba(255, 255, 255, 0.85);
     
-    --text-primary: #1a1d20;
-    --text-secondary: #495057;
-    --text-muted: #868e96;
+    --text-primary: #0f1113;    /* Darker primary text for maximum contrast */
+    --text-secondary: #2d3238;  /* Darker secondary text for legibility */
+    --text-muted: #5c636a;      /* Darker muted text for visibility of smaller texts */
     
     --border-glass: rgba(0, 0, 0, 0.08);
     --border-gold: rgba(212, 175, 55, 0.35);
     
     --shadow-premium: 0 15px 35px rgba(0, 0, 0, 0.06), 0 5px 15px rgba(0, 0, 0, 0.04);
     --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.08);
+}
+
+/* Legibility Enhancement: Thicker font for small text in light mode only */
+body.light-theme {
+    font-weight: 600;
+}
+
+body.light-theme p,
+body.light-theme li,
+body.light-theme span:not(.brand-subtitle-en):not(.badge-gold):not(.service-tag),
+body.light-theme a:not(.btn-primary):not(.btn-secondary):not(.logo-link):not(.cta-header-btn),
+body.light-theme input,
+body.light-theme select,
+body.light-theme textarea,
+body.light-theme label {
+    font-weight: 600;
 }
 
 /* Specific Light Theme Component Overrides */
