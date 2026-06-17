@@ -365,7 +365,7 @@ img {
     justify-content: center;
     position: relative;
     padding: 120px 24px 80px;
-    background-image: url('images/img-2.jpg');
+    background-image: url('images/img-2.webp');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -509,7 +509,7 @@ img {
     border: 1px solid rgba(212, 175, 55, 0.15);
 }
 
-.highlight-info h4 {
+.highlight-info h3 {
     font-size: 1.05rem;
     margin-bottom: 4px;
 }
@@ -1147,7 +1147,7 @@ html[lang="en"] .service-specs li {
     color: var(--text-muted);
 }
 
-.footer-grid h4 {
+.footer-grid h3 {
     font-size: 1.1rem;
     color: var(--gold-primary);
     margin-bottom: 24px;
@@ -1155,7 +1155,7 @@ html[lang="en"] .service-specs li {
     padding-bottom: 10px;
 }
 
-.footer-grid h4::after {
+.footer-grid h3::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1195,6 +1195,23 @@ html[lang="en"] .service-specs li {
     color: var(--gold-primary);
     font-size: 16px;
     width: 16px;
+}
+
+.footer-address-col p a.footer-social-link {
+    color: var(--text-secondary);
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-address-col p a.footer-social-link:hover {
+    color: var(--gold-primary);
+}
+
+.footer-address-col p a.footer-social-link:hover i {
+    color: var(--gold-light);
+    transform: scale(1.1);
 }
 
 .footer-bottom {
@@ -1662,7 +1679,7 @@ html[lang="en"] .service-specs li::before {
 }
 
 /* Footer Section Title Underline alignment */
-html[lang="en"] .footer-grid h4::after {
+html[lang="en"] .footer-grid h3::after {
     right: auto;
     left: 0;
 }
@@ -1692,5 +1709,200 @@ html[lang="en"] .footer-services-col a:hover {
     html[lang="en"] .mobile-menu-lang {
         direction: ltr;
     }
+}
+
+/* ==========================================================================
+   16. LIGHT THEME OVERRIDES
+   ========================================================================== */
+body.light-theme {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f1f3f5;
+    --bg-glass: rgba(255, 255, 255, 0.85);
+    
+    --text-primary: #1a1d20;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    
+    --border-glass: rgba(0, 0, 0, 0.08);
+    --border-gold: rgba(212, 175, 55, 0.35);
+    
+    --shadow-premium: 0 15px 35px rgba(0, 0, 0, 0.06), 0 5px 15px rgba(0, 0, 0, 0.04);
+    --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.08);
+}
+
+/* Specific Light Theme Component Overrides */
+/* 1. Header */
+/* Desktop transparent header should stay white so it is visible against dark hero */
+@media (min-width: 769px) {
+    body.light-theme .site-header:not(.sticky) .nav-link {
+        color: rgba(255, 255, 255, 0.9);
+    }
+    body.light-theme .site-header:not(.sticky) .nav-link:hover,
+    body.light-theme .site-header:not(.sticky) .nav-link.active {
+        color: var(--gold-primary);
+    }
+    body.light-theme .site-header:not(.sticky) .brand-subtitle {
+        color: #ffffff;
+    }
+    body.light-theme .site-header:not(.sticky) .brand-subtitle-en {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    body.light-theme .site-header:not(.sticky) .lang-switch-pill a {
+        color: rgba(255, 255, 255, 0.9);
+    }
+    body.light-theme .site-header:not(.sticky) .lang-switch-pill a.active-lang {
+        color: var(--bg-primary); /* Uses dark color on the active gold background */
+    }
+    body.light-theme .site-header:not(.sticky) .theme-toggle-btn {
+        color: rgba(255, 255, 255, 0.9);
+        border-color: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.05);
+    }
+    body.light-theme .site-header:not(.sticky) .theme-toggle-btn:hover {
+        color: var(--gold-primary);
+        border-color: var(--gold-primary);
+        background: rgba(212, 175, 55, 0.1);
+    }
+}
+
+/* Sticky Header in Light Theme */
+body.light-theme .site-header.sticky {
+    background-color: var(--bg-glass);
+    border-bottom: 1px solid var(--border-glass);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .site-header.sticky .nav-link {
+    color: var(--text-secondary);
+}
+
+body.light-theme .site-header.sticky .nav-link:hover,
+body.light-theme .site-header.sticky .nav-link.active {
+    color: var(--gold-primary);
+}
+
+body.light-theme .site-header.sticky .brand-subtitle {
+    color: var(--text-primary);
+}
+
+body.light-theme .site-header.sticky .brand-subtitle-en {
+    color: var(--text-muted);
+}
+
+body.light-theme .site-header.sticky .lang-switch-pill a {
+    color: var(--text-secondary);
+}
+
+body.light-theme .site-header.sticky .lang-switch-pill a.active-lang {
+    color: #ffffff; /* Active language is white on gold pill background */
+}
+
+body.light-theme .site-header.sticky .theme-toggle-btn {
+    color: var(--text-secondary);
+    border-color: var(--border-glass);
+}
+
+/* Mobile Header (always transparent in our design, sitting on dark hero section) */
+@media (max-width: 768px) {
+    body.light-theme .site-header .brand-subtitle {
+        color: #ffffff;
+    }
+    body.light-theme .site-header .brand-subtitle-en {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    body.light-theme .site-header .lang-switch-pill a {
+        color: rgba(255, 255, 255, 0.9);
+    }
+    body.light-theme .site-header .lang-switch-pill a.active-lang {
+        color: #ffffff;
+    }
+    body.light-theme .site-header .theme-toggle-btn {
+        color: rgba(255, 255, 255, 0.9);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Light Theme Hero overrides - hero section remains dark for premium luxury contrast */
+body.light-theme .hero-section {
+    background-color: #0b0b0d; /* Keep hero dark */
+}
+
+/* Light Theme Card & Testimonial Overrides */
+body.light-theme .highlight-card,
+body.light-theme .about-feature-card,
+body.light-theme .service-card,
+body.light-theme .contact-method-card,
+body.light-theme .testimonial-card,
+body.light-theme .gallery-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-glass);
+    box-shadow: var(--shadow-premium);
+}
+
+body.light-theme .highlight-card:hover,
+body.light-theme .about-feature-card:hover,
+body.light-theme .service-card:hover,
+body.light-theme .contact-method-card:hover,
+body.light-theme .testimonial-card:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--gold-primary);
+}
+
+body.light-theme .contact-method-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-glass);
+}
+
+body.light-theme .social-icons-centered a {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-glass);
+    color: var(--text-secondary);
+}
+
+body.light-theme .social-icons-centered a:hover {
+    color: #ffffff;
+    background: var(--gold-gradient);
+    border-color: var(--gold-primary);
+}
+
+body.light-theme .placeholder-icon {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+body.light-theme .estimator-box {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-glass);
+}
+
+body.light-theme .form-group input,
+body.light-theme .form-group select,
+body.light-theme .form-group textarea {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-glass);
+    color: var(--text-primary);
+}
+
+body.light-theme .form-group input:focus,
+body.light-theme .form-group select:focus,
+body.light-theme .form-group textarea:focus {
+    border-color: var(--gold-primary);
+    background: var(--bg-secondary);
+}
+
+/* Light Theme Footer Override */
+body.light-theme .site-footer {
+    background: #f1f3f5;
+    border-top: 1px solid var(--border-glass);
+}
+
+body.light-theme .footer-bottom {
+    background: #e9ecef;
+    border-top: 1px solid var(--border-glass);
+}
+
+body.light-theme .footer-brand-desc,
+body.light-theme .copyright-text {
+    color: var(--text-muted);
 }
 

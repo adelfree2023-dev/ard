@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         
         galleryImages.push({
-            src: `images/img-${i}.jpg`,
+            src: `images/img-${i}.webp`,
             category: category,
             categoryLabel: categoryLabel,
             title: title
@@ -243,5 +243,29 @@ document.addEventListener("DOMContentLoaded", () => {
         goToSlide(nextSlide);
     }, 6000);
 
+    /* 6. THEME SWITCHER LOGIC (LIGHT / DARK MODE)
+       ========================================================================== */
+    const themeToggle = document.getElementById("theme-toggle");
+    
+    // Initial icon state adjustment based on loaded theme
+    if (document.body.classList.contains("light-theme")) {
+        if (themeToggle) themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    } else {
+        if (themeToggle) themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            if (document.body.classList.contains("light-theme")) {
+                document.body.classList.remove("light-theme");
+                localStorage.setItem("theme", "dark");
+                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                document.body.classList.add("light-theme");
+                localStorage.setItem("theme", "light");
+                themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        });
+    }
 
 });

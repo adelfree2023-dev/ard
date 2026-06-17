@@ -38,6 +38,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script>
+        if (localStorage.getItem("theme") === "light") {
+            document.body.classList.add("light-theme");
+        }
+    </script>
 
     <!-- Header & Navigation -->
     <header id="main-header" class="site-header">
@@ -71,6 +76,9 @@
                     <a href="index.html">AR</a>
                     <a href="en.html" class="active-lang">EN</a>
                 </div>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
                 <a href="https://wa.me/97455262988" class="cta-header-btn" id="btn-quick-call">
                     <i class="fa-brands fa-whatsapp"></i> Quick Booking
                 </a>
@@ -114,28 +122,28 @@
             <div class="highlight-card">
                 <span class="highlight-icon"><i class="fa-solid fa-gem"></i></span>
                 <div class="highlight-info">
-                    <h4>VIP Royal Tents</h4>
+                    <h3>VIP Royal Tents</h3>
                     <p>Heat-resistant with modern decors</p>
                 </div>
             </div>
             <div class="highlight-card">
                 <span class="highlight-icon"><i class="fa-solid fa-couch"></i></span>
                 <div class="highlight-info">
-                    <h4>Luxury Majlis & Furniture</h4>
+                    <h3>Luxury Majlis & Furniture</h3>
                     <p>Sadu, suede, royal & velvet chairs</p>
                 </div>
             </div>
             <div class="highlight-card">
                 <span class="highlight-icon"><i class="fa-solid fa-snowflake"></i></span>
                 <div class="highlight-info">
-                    <h4>Cooling & Heating</h4>
+                    <h3>Cooling & Heating</h3>
                     <p>Powerful AC units suitable for all sizes</p>
                 </div>
             </div>
             <div class="highlight-card">
                 <span class="highlight-icon"><i class="fa-solid fa-clock"></i></span>
                 <div class="highlight-info">
-                    <h4>24/7 Readiness</h4>
+                    <h3>24/7 Readiness</h3>
                     <p>Fast installation & extreme precision</p>
                 </div>
             </div>
@@ -149,7 +157,7 @@
                 <div class="about-visual">
                     <div class="visual-stack">
                         <div class="img-wrapper main-img-wrapper">
-                            <img src="images/img-3.jpg" alt="Al-Moatamad luxury event setup interior" class="about-img main-img">
+                            <img src="images/img-3.webp" alt="Al-Moatamad luxury event setup interior" class="about-img main-img">
                         </div>
                         <div class="experience-badge">
                             <span class="exp-years">+15</span>
@@ -199,7 +207,7 @@
                 <!-- Service 1: Royal Tents -->
                 <div class="service-card" data-category="tents">
                     <div class="service-img-wrapper">
-                        <img src="images/img-1.jpg" alt="Royal tents for weddings and events" class="service-img">
+                        <img src="images/img-1.webp" alt="Royal tents for weddings and events" class="service-img">
                         <div class="service-tag">VIP</div>
                     </div>
                     <div class="service-info">
@@ -217,7 +225,7 @@
                 <!-- Service 2: Mourning Tents -->
                 <div class="service-card" data-category="tents">
                     <div class="service-img-wrapper">
-                        <img src="images/img-6.jpg" alt="Condolence and mourning tent setups" class="service-img">
+                        <img src="images/img-6.webp" alt="Condolence and mourning tent setups" class="service-img">
                         <div class="service-tag">Fully Prepared</div>
                     </div>
                     <div class="service-info">
@@ -235,7 +243,7 @@
                 <!-- Service 3: Luxury Majlis -->
                 <div class="service-card" data-category="furniture">
                     <div class="service-img-wrapper">
-                        <img src="images/img-21.jpg" alt="Traditional Qatari Sadu Majlis" class="service-img">
+                        <img src="images/img-21.webp" alt="Traditional Qatari Sadu Majlis" class="service-img">
                         <div class="service-tag">Heritage & Authenticity</div>
                     </div>
                     <div class="service-info">
@@ -253,7 +261,7 @@
                 <!-- Service 4: Royal Chairs -->
                 <div class="service-card" data-category="furniture">
                     <div class="service-img-wrapper">
-                        <img src="images/img-23.jpg" alt="Royal gilded chairs and velvet seating" class="service-img">
+                        <img src="images/img-23.webp" alt="Royal gilded chairs and velvet seating" class="service-img">
                         <div class="service-tag">Various Shapes</div>
                     </div>
                     <div class="service-info">
@@ -271,7 +279,7 @@
                 <!-- Service 5: Lighting systems -->
                 <div class="service-card" data-category="lighting">
                     <div class="service-img-wrapper">
-                        <img src="images/img-41.jpg" alt="VIP lighting systems and crystal chandeliers" class="service-img">
+                        <img src="images/img-41.webp" alt="VIP lighting systems and crystal chandeliers" class="service-img">
                         <div class="service-tag">Artistic Lighting</div>
                     </div>
                     <div class="service-info">
@@ -289,7 +297,7 @@
                 <!-- Service 6: AC and Power Generators -->
                 <div class="service-card" data-category="cooling">
                     <div class="service-img-wrapper">
-                        <img src="images/img-56.jpg" alt="AC rental and silent generators" class="service-img">
+                        <img src="images/img-56.webp" alt="AC rental and silent generators" class="service-img">
                         <div class="service-tag">Super Cooling</div>
                     </div>
                     <div class="service-info">
@@ -492,7 +500,7 @@
                     </div>
 
                     <div class="footer-links-col">
-                        <h4>Quick Links</h4>
+                        <h3>Quick Links</h3>
                         <ul>
                             <li><a href="#hero">Home</a></li>
                             <li><a href="#about">About Us</a></li>
@@ -502,7 +510,7 @@
                     </div>
 
                     <div class="footer-services-col">
-                        <h4>Core Services</h4>
+                        <h3>Core Services</h3>
                         <ul>
                             <li><a href="#services">Royal Tent Rental</a></li>
                             <li><a href="#services">Sadu & Traditional Majlis</a></li>
@@ -513,11 +521,16 @@
                     </div>
 
                     <div class="footer-address-col">
-                        <h4>Direct Contact</h4>
+                        <h3>Direct Contact</h3>
                         <p><i class="fa-solid fa-location-dot"></i> Doha, State of Qatar</p>
                         <p><i class="fa-solid fa-phone"></i> <span dir="ltr">5526 2988</span></p>
                         <p><i class="fa-solid fa-envelope"></i> almuetamadforevents@gmail.com</p>
                         <p><i class="fa-solid fa-clock"></i> We operate 24/7</p>
+                        <p>
+                            <a href="https://www.instagram.com/almoatamadforeventsandweddings/" target="_blank" rel="noopener" class="footer-social-link">
+                                <i class="fa-brands fa-instagram"></i> Follow us on Instagram
+                            </a>
+                        </p>
                     </div>
 
                 </div>
@@ -548,7 +561,7 @@
     <div class="lightbox-modal" id="gallery-lightbox" aria-hidden="true" role="dialog">
         <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close Preview"><i class="fa-solid fa-xmark"></i></button>
         <div class="lightbox-content">
-            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Image preview content" class="lightbox-img" id="lightbox-img">
             <div class="lightbox-caption" id="lightbox-caption"></div>
         </div>
     </div>

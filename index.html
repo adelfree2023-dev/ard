@@ -38,6 +38,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script>
+        if (localStorage.getItem("theme") === "light") {
+            document.body.classList.add("light-theme");
+        }
+    </script>
 
     <!-- Header & Navigation -->
     <header id="main-header" class="site-header">
@@ -71,6 +76,9 @@
                     <a href="index.html" class="active-lang">AR</a>
                     <a href="en.html">EN</a>
                 </div>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="تغيير المظهر">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
                 <a href="https://wa.me/97455262988" class="cta-header-btn" id="btn-quick-call">
                     <i class="fa-brands fa-whatsapp"></i> حجز سريع
                 </a>
@@ -114,28 +122,28 @@
             <div class="highlight-card">
                 <span class="highlight-icon"><i class="fa-solid fa-gem"></i></span>
                 <div class="highlight-info">
-                    <h4>خيام ملكية VIP</h4>
+                    <h3>خيام ملكية VIP</h3>
                     <p>مقاومة للحرارة وبأحدث الديكورات</p>
                 </div>
             </div>
             <div class="highlight-card">
                 <span class="highlight-icon"><i class="fa-solid fa-couch"></i></span>
                 <div class="highlight-info">
-                    <h4>أثاث ومجالس فاخرة</h4>
+                    <h3>أثاث ومجالس فاخرة</h3>
                     <p>سدو، شمواه، كراسي ملكية ومخمل</p>
                 </div>
             </div>
             <div class="highlight-card">
                 <span class="highlight-icon"><i class="fa-solid fa-snowflake"></i></span>
                 <div class="highlight-info">
-                    <h4>أنظمة تبريد وتدفئة</h4>
+                    <h3>أنظمة تبريد وتدفئة</h3>
                     <p>أجهزة تكييف قوية ومناسبة لجميع الأحجام</p>
                 </div>
             </div>
             <div class="highlight-card">
                 <span class="highlight-icon"><i class="fa-solid fa-clock"></i></span>
                 <div class="highlight-info">
-                    <h4>جاهزية على مدار الساعة</h4>
+                    <h3>جاهزية على مدار الساعة</h3>
                     <p>سرعة في التركيب ودقة متناهية</p>
                 </div>
             </div>
@@ -149,7 +157,7 @@
                 <div class="about-visual">
                     <div class="visual-stack">
                         <div class="img-wrapper main-img-wrapper">
-                            <img src="images/img-3.jpg" alt="المعتمد لتجهيز الحفلات والمناسبات من الداخل" class="about-img main-img">
+                            <img src="images/img-3.webp" alt="المعتمد لتجهيز الحفلات والمناسبات من الداخل" class="about-img main-img">
                         </div>
                         <div class="experience-badge">
                             <span class="exp-years">+15</span>
@@ -201,7 +209,7 @@
                 <!-- Service 1: Royal Tents -->
                 <div class="service-card" data-category="tents">
                     <div class="service-img-wrapper">
-                        <img src="images/img-1.jpg" alt="خيام ملكية للأفراح والمناسبات" class="service-img">
+                        <img src="images/img-1.webp" alt="خيام ملكية للأفراح والمناسبات" class="service-img">
                         <div class="service-tag">VIP</div>
                     </div>
                     <div class="service-info">
@@ -219,7 +227,7 @@
                 <!-- Service 2: Mourning Tents -->
                 <div class="service-card" data-category="tents">
                     <div class="service-img-wrapper">
-                        <img src="images/img-6.jpg" alt="تجهيز خيام العزاء والمناسبات العائلية" class="service-img">
+                        <img src="images/img-6.webp" alt="تجهيز خيام العزاء والمناسبات العائلية" class="service-img">
                         <div class="service-tag">جاهزية تامة</div>
                     </div>
                     <div class="service-info">
@@ -237,7 +245,7 @@
                 <!-- Service 3: Luxury Majlis -->
                 <div class="service-card" data-category="furniture">
                     <div class="service-img-wrapper">
-                        <img src="images/img-21.jpg" alt="كنب سدو ومجالس قطرية شعبية" class="service-img">
+                        <img src="images/img-21.webp" alt="كنب سدو ومجالس قطرية شعبية" class="service-img">
                         <div class="service-tag">تراث وأصالة</div>
                     </div>
                     <div class="service-info">
@@ -255,7 +263,7 @@
                 <!-- Service 4: Royal Chairs -->
                 <div class="service-card" data-category="furniture">
                     <div class="service-img-wrapper">
-                        <img src="images/img-23.jpg" alt="تأجير كراسي ملكية ومخمل" class="service-img">
+                        <img src="images/img-23.webp" alt="تأجير كراسي ملكية ومخمل" class="service-img">
                         <div class="service-tag">تنوع الأشكال</div>
                     </div>
                     <div class="service-info">
@@ -273,7 +281,7 @@
                 <!-- Service 5: Lighting systems -->
                 <div class="service-card" data-category="lighting">
                     <div class="service-img-wrapper">
-                        <img src="images/img-41.jpg" alt="أنظمة إضاءة ملكية وثريات كريستال" class="service-img">
+                        <img src="images/img-41.webp" alt="أنظمة إضاءة ملكية وثريات كريستال" class="service-img">
                         <div class="service-tag">إنارة فنية</div>
                     </div>
                     <div class="service-info">
@@ -291,7 +299,7 @@
                 <!-- Service 6: AC and Power Generators -->
                 <div class="service-card" data-category="cooling">
                     <div class="service-img-wrapper">
-                        <img src="images/img-56.jpg" alt="تأجير مكيفات ومولدات كهرباء قطر" class="service-img">
+                        <img src="images/img-56.webp" alt="تأجير مكيفات ومولدات كهرباء قطر" class="service-img">
                         <div class="service-tag">تبريد فائق</div>
                     </div>
                     <div class="service-info">
@@ -496,7 +504,7 @@
                     </div>
 
                     <div class="footer-links-col">
-                        <h4>روابط سريعة</h4>
+                        <h3>روابط سريعة</h3>
                         <ul>
                             <li><a href="#hero">الرئيسية</a></li>
                             <li><a href="#about">من نحن</a></li>
@@ -506,7 +514,7 @@
                     </div>
 
                     <div class="footer-services-col">
-                        <h4>خدماتنا الأساسية</h4>
+                        <h3>خدماتنا الأساسية</h3>
                         <ul>
                             <li><a href="#services">تأجير خيام ملكية</a></li>
                             <li><a href="#services">مجالس سدو وشعبي</a></li>
@@ -517,11 +525,16 @@
                     </div>
 
                     <div class="footer-address-col">
-                        <h4>تواصل مباشر</h4>
+                        <h3>تواصل مباشر</h3>
                         <p><i class="fa-solid fa-location-dot"></i> الدوحة، دولة قطر</p>
                         <p><i class="fa-solid fa-phone"></i> <span dir="ltr">5526 2988</span></p>
                         <p><i class="fa-solid fa-envelope"></i> almuetamadforevents@gmail.com</p>
                         <p><i class="fa-solid fa-clock"></i> نعمل 24 ساعة طوال الأسبوع</p>
+                        <p>
+                            <a href="https://www.instagram.com/almoatamadforeventsandweddings/" target="_blank" rel="noopener" class="footer-social-link">
+                                <i class="fa-brands fa-instagram"></i> تابعنا على إنستغرام
+                            </a>
+                        </p>
                     </div>
 
                 </div>
@@ -552,7 +565,7 @@
     <div class="lightbox-modal" id="gallery-lightbox" aria-hidden="true" role="dialog">
         <button class="lightbox-close" id="lightbox-close-btn" aria-label="إغلاق المعاينة"><i class="fa-solid fa-xmark"></i></button>
         <div class="lightbox-content">
-            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="معاينة الصورة المعروضة" class="lightbox-img" id="lightbox-img">
             <div class="lightbox-caption" id="lightbox-caption"></div>
         </div>
     </div>
