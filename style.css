@@ -1295,6 +1295,51 @@ html[lang="en"] .service-specs li {
     opacity: 1;
 }
 
+/* ── Floating Call Widget ── */
+.floating-call-widget {
+    position: fixed;
+    bottom: 105px;
+    right: 30px;
+    background: var(--gold-gradient);
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 999;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35);
+    transition: var(--transition-smooth);
+    animation: whatsappBounce 2s infinite 0.5s; /* Offset animation start slightly for dynamic feel */
+}
+
+.floating-call-widget:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+}
+
+.call-tooltip {
+    position: absolute;
+    right: 75px;
+    background: var(--bg-secondary);
+    color: var(--gold-primary);
+    border: 1px solid var(--border-gold);
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-smooth);
+}
+
+.floating-call-widget:hover .call-tooltip {
+    opacity: 1;
+}
+
 /* Lightbox Modal */
 .lightbox-modal {
     position: fixed;
@@ -1537,6 +1582,14 @@ html[lang="en"] .service-specs li {
         width: 50px;
         height: 50px;
         font-size: 24px;
+    }
+
+    .floating-call-widget {
+        bottom: 82px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
     }
 
     /* Hero top padding to clear fixed header on mobile */
