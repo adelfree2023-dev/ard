@@ -42,47 +42,66 @@ document.addEventListener("DOMContentLoaded", () => {
        ========================================================================== */
     const mobileToggle = document.getElementById("mobile-toggle");
     const siteNav = document.getElementById("site-nav");
+    const navOverlay = document.getElementById("nav-overlay");
+
+    function openNav() {
+        siteNav.classList.add("active");
+        mobileToggle.classList.add("open");
+        if (navOverlay) navOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeNav() {
+        siteNav.classList.remove("active");
+        mobileToggle.classList.remove("open");
+        if (navOverlay) navOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+    }
 
     mobileToggle.addEventListener("click", () => {
-        siteNav.classList.toggle("active");
-        mobileToggle.classList.toggle("open");
+        if (siteNav.classList.contains("active")) {
+            closeNav();
+        } else {
+            openNav();
+        }
     });
 
     navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            siteNav.classList.remove("active");
-            mobileToggle.classList.remove("open");
-        });
+        link.addEventListener("click", closeNav);
     });
 
-    document.addEventListener("click", (e) => {
-        if (!siteNav.contains(e.target) && !mobileToggle.contains(e.target)) {
-            siteNav.classList.remove("active");
-            mobileToggle.classList.remove("open");
+    if (navOverlay) {
+        navOverlay.addEventListener("click", closeNav);
+    }
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && siteNav.classList.contains("active")) {
+            closeNav();
         }
     });
 
     /* 3. DYNAMIC 70-IMAGE GALLERY ENGINE (WITH LAZY-LOAD & FILTER & LOAD-MORE)
        ========================================================================== */
     // Generate Metadata for the 70 user images in images/img-1.jpg to images/img-70.jpg
+    const isEn = document.documentElement.lang === "en";
     const galleryImages = [];
     for (let i = 1; i <= 70; i++) {
         let category = "tents";
-        let categoryLabel = "خيام ملكية";
-        let title = `خيمة ملكية VIP - تصميم ${i}`;
+        let categoryLabel = isEn ? "Royal Tents" : "خيام ملكية";
+        let title = isEn ? `VIP Royal Tent - Design ${i}` : `خيمة ملكية VIP - تصميم ${i}`;
         
         if (i > 20 && i <= 40) {
             category = "furniture";
-            categoryLabel = "أثاث ومجالس";
-            title = `مجالس وأثاث فاخر - تصميم ${i - 20}`;
+            categoryLabel = isEn ? "Luxury Furniture & Majlis" : "أثاث ومجالس";
+            title = isEn ? `Luxury Majlis & Furniture - Design ${i - 20}` : `مجالس وأثاث فاخر - تصميم ${i - 20}`;
         } else if (i > 40 && i <= 55) {
             category = "lighting";
-            categoryLabel = "إضاءة وديكور";
-            title = `إنارة وثريات ملكية - تصميم ${i - 40}`;
+            categoryLabel = isEn ? "Lighting & Decor" : "إضاءة وديكور";
+            title = isEn ? `Royal Lighting & Chandelier - Design ${i - 40}` : `إنارة وثريات ملكية - تصميم ${i - 40}`;
         } else if (i > 55) {
             category = "cooling";
-            categoryLabel = "تبريد وخدمات";
-            title = `تجهيز تكييف ومولدات طاقة - تصميم ${i - 55}`;
+            categoryLabel = isEn ? "Cooling & Power" : "تبريد وخدمات";
+            title = isEn ? `AC & Power Generator - Design ${i - 55}` : `تجهيز تكييف ومولدات طاقة - تصميم ${i - 55}`;
         }
         
         galleryImages.push({
@@ -204,7 +223,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function goToSlide(slideIndex) {
         currentSlide = slideIndex;
-        carousel.style.transform = `translateX(${currentSlide * 100}%)`;
+        const multiplier = isEn ? -1 : 1;
+        carousel.style.transform = `translateX(${currentSlide * 100 * multiplier}%)`;
         
         dots.forEach((dot, index) => {
             dot.classList.toggle("active", index === currentSlide);

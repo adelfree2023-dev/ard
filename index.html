@@ -10,6 +10,7 @@
     
     <!-- SEO & Metadata -->
     <link rel="canonical" href="https://www.almoatamad.net/">
+    <link rel="icon" type="image/webp" href="images/logo.webp">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -52,6 +53,10 @@
             </div>
             
             <nav id="site-nav" class="nav-menu">
+                <div class="mobile-menu-lang">
+                    <a href="index.html" class="active-lang">العربية</a>
+                    <a href="en.html">English</a>
+                </div>
                 <ul>
                     <li><a href="#hero" class="nav-link active" id="nav-home">الرئيسية</a></li>
                     <li><a href="#about" class="nav-link" id="nav-about">من نحن</a></li>
@@ -62,6 +67,10 @@
             </nav>
 
             <div class="header-actions">
+                <div class="lang-switch-pill">
+                    <a href="index.html" class="active-lang">AR</a>
+                    <a href="en.html">EN</a>
+                </div>
                 <a href="https://wa.me/97455262988" class="cta-header-btn" id="btn-quick-call">
                     <i class="fa-brands fa-whatsapp"></i> حجز سريع
                 </a>
@@ -73,6 +82,9 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Nav Overlay Backdrop -->
+    <div class="nav-overlay" id="nav-overlay"></div>
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
