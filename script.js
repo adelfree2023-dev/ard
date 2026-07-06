@@ -268,4 +268,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* 7. GOOGLE ADS CONVERSION TRACKING FOR CONTACT BUTTONS
+       ========================================================================== */
+    function trackConversion() {
+        if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-18248508524/J-rKCMee3MscEOzIyP1D'
+            });
+        }
+    }
+
+    // Track clicks on WhatsApp and Phone links
+    document.querySelectorAll('a[href^="tel:"], a[href*="wa.me"]').forEach(link => {
+        link.addEventListener('click', () => {
+            trackConversion();
+        });
+    });
+
 });
+
