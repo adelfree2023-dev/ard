@@ -270,18 +270,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* 7. GOOGLE ADS CONVERSION TRACKING FOR CONTACT BUTTONS
        ========================================================================== */
-    function trackConversion() {
+    function trackConversion(sendToId) {
         if (typeof gtag === 'function') {
             gtag('event', 'conversion', {
-                'send_to': 'AW-18248508524/J-rKCMee3MscEOzIyP1D'
+                'send_to': sendToId
             });
         }
     }
 
-    // Track clicks on WhatsApp and Phone links
-    document.querySelectorAll('a[href^="tel:"], a[href*="wa.me"]').forEach(link => {
+    // Track clicks on Phone links (عميل مهتم للمكالمات الهاتفية)
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
         link.addEventListener('click', () => {
-            trackConversion();
+            trackConversion('AW-18248508524/Qb2CCPLY3MscEOzIyP1D');
+        });
+    });
+
+    // Track clicks on WhatsApp links (جهة اتصال)
+    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+        link.addEventListener('click', () => {
+            trackConversion('AW-18248508524/J-rKCMee3MscEOzIyP1D');
         });
     });
 
